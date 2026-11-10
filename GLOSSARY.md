@@ -10,6 +10,9 @@ An online course platform. Instructors publish courses; students buy them and wo
 A person who buys courses and works through their lessons.
 _Avoid_: Learner
 
+**Admin**:
+A person who runs the platform. Only admins resolve refunds.
+
 ### Refunds
 
 **Refund**:
@@ -21,16 +24,20 @@ The state of a refund that waits for a decision.
 _Avoid_: Pending, Open, Raised
 
 **Approved**:
-The state of a refund that was accepted. The money goes back to the student.
+The state of a refund that was accepted. The student gets the full refund amount back and loses access to the course; their progress is kept.
 
 **Declined**:
-The state of a refund that was not accepted. No money goes back.
+The state of a refund that was not accepted. No money goes back, and the student keeps access. The student may request a new refund while the purchase is still eligible.
 
 **Resolved**:
-A refund that is approved or declined.
+A refund that is approved or declined. A resolved refund is final.
+
+**Decline Reason**:
+The admin's note to the student on why a refund was declined.
+_Avoid_: Rejection reason, Note
 
 **Refund Amount**:
-The money a student gets back for a refund.
+The money a student gets back for a refund: exactly what the student paid for the purchase.
 _Avoid_: Refundable amount, Amount refunded
 
 **Refund Reason**:
